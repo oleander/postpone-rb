@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["linus@oleander.nu"]
   gem.description   = %q{Beanstalkd backed asynchronous priority queue}
   gem.summary       = %q{Beanstalkd backed asynchronous priority queue}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/oleander/postpone-rb"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
