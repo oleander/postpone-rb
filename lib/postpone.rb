@@ -1,5 +1,2 @@
-require "postpone/version"
-
-module Postpone
-  # Your code goes here...
-end
+require_relative "./postpone/invoke"
+Object.send(:include, Postpone)
