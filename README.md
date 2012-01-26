@@ -4,8 +4,8 @@ A [Beanstalkd](http://kr.github.com/beanstalkd/) backed asynchronous priority qu
 
 ## Why beanstalkd?
 
-In contrast to other asynchronous priority queues Beanstalkd doesn't use polling behind the scene.
-This means that your jobs will start faster.
+In contrast to other asynchronous priority queues Beanstalkd doesn't use 
+polling behind the scene. This means that your jobs will start faster.
 
 ## Installation
 
