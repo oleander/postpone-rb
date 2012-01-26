@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = "0.1.0"
   
-  s.add_dependency("stalker")
-  s.add_development_dependency("rspec")
-  s.required_ruby_version = "~> 1.9.0"
+  gem.add_dependency("stalker")
+  gem.add_development_dependency("rspec")
+  gem.required_ruby_version = "~> 1.9.0"
 end
