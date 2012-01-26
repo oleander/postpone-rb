@@ -1,5 +1,6 @@
 require "rspec"
 require_relative "../lib/postpone"
+require_relative "../lib/postpone/worker"
 
 module Helpers
   def translate(hash, type = "symbol")
@@ -17,10 +18,10 @@ module Helpers
 end
 
 class Example
-  def method1; end
-  def method2(value1, value2); end
-  def self.method3; end
-  def self.method4(value1, value2); end
+  def method1; $method1 = 1; end
+  def method2(value1, value2); $method2 = 1; end
+  def self.method3; $method3 = 1; end
+  def self.method4(value1, value2); $method4 = 1; end
 end
 
 RSpec.configure do |config|

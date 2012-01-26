@@ -47,10 +47,56 @@ describe Postpone::Invoke do
   end  
 end
 
-# describe Postpone::Worker do
-#   describe "instance" do
-#     it "should call method" do
-#       Postpone::Worker.new(args)
-#     end
-#   end
-# end
+describe Postpone::Worker do
+  describe "instance" do
+    subject { Example.new }
+    
+    before(:all) { $method1, $method2 = nil, nil }
+    
+    it "should call instance method, without arguments" do
+      Postpone::Worker.new(translate({
+        args: [],
+        object: subject,
+        method: :method1
+      }, "string"))
+      
+      $method1.should_not be_nil
+    end
+    
+    it "should call instance method, with arguments" do
+      Postpone::Worker.new(translate({
+        args: ["value1", "value2"],
+        object: subject,
+        method: :method2
+      }, "string"))
+      
+      $method2.should_not be_nil
+    end    
+  end
+  
+  describe "class method" do
+    subject { Example }
+    
+    before(:all) { $method3, $method4 = nil, nil }
+    
+    it "should call instance method, without arguments" do
+      Postpone::Worker.new(translate({
+        args: [],
+        object: subject,
+        method: :method3
+      }, "string"))
+      
+      $method3.should_not be_nil
+    end
+    
+    it "should call instance method, with arguments" do
+      Postpone::Worker.new(translate({
+        args: ["value1", "value2"],
+        object: subject,
+        method: :method4
+      }, "string"))
+      
+      $method4.should_not be_nil
+    end
+  end
+end
