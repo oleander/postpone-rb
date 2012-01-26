@@ -24,6 +24,8 @@ Or install it yourself as:
 $ gem install postpone
 ```
 
+Don't forget to install and start the [beanstalkd bin](http://kr.github.com/beanstalkd/download.html).
+
 ## Invoke
 
 Call `postpone` on any given object to *postpone* the execution.
